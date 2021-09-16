@@ -1,0 +1,45 @@
+{
+    "model": {
+        "latent_dim": 200,
+        "user_content_dim": 831,
+        "item_content_dim": 2738,
+        "model_select": [800,400],
+        "output_dim": 200
+    },
+    "train": {
+        "user_batch_size": 1000,
+        "data_batch_size": 100,
+        "n_scores_user": 2500,
+        "p_dropout": 0.5,
+        "eval_every": 50,
+        "lr": 0.005,
+        "_decay_lr_every": 50,
+        "_lr_decay": 0.1
+    },
+    "eval": {
+        "batch_size": 1000,
+        "recall_at": [100, 200, 300, 400, 500]
+    },
+    "path": {
+        "base": "./data/recsys2017.pub/eval",
+        "train": {
+            "train_file": "warm/train.csv",
+            "u_file": "trained/warm/U.csv.bin",
+            "v_file": "trained/warm/V.csv.bin",
+            "u_content_file": "user_features_0based.txt",
+            "v_content_file": "item_features_0based.txt",
+            "u_indices": "warm/u_indices.bin"
+        },
+        "test": {
+            "warm_file": "warm/test_warm.csv",
+            "warm_iid_file": "warm/test_warm_item_ids.csv",
+            "cold_user_file": "warm/test_cold_user.csv",
+            "cold_user_iid_file": "warm/test_cold_user_item_ids.csv",
+            "cold_item_file": "warm/test_cold_item.csv",
+            "cold_item_iid_file": "warm/test_cold_item_item_ids.csv"
+        }
+    },
+    "use_gpu": true,
+    "num_epochs": 10,
+    "log_dir": "./log"
+}

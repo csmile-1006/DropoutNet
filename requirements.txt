@@ -1,0 +1,8 @@
+fire
+tqdm
+numpy
+ujson
+pandas
+dotmap
+sklearn
+pytorch
